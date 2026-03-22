@@ -1,0 +1,3 @@
+/* Tailwind v4 では @import "tailwindcss" 1行で読み込む */
+/* v3 の @tailwind base/components/utilities は廃止 */
+@import "tailwindcss";
