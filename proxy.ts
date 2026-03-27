@@ -7,7 +7,7 @@ import { NextResponse, type NextRequest } from 'next/server'
  *
  * すべてのページリクエストの前に実行される。
  * - 未ログイン → /login にリダイレクト
- * - ログイン済みで /login にアクセス → /todos にリダイレクト
+ * - ログイン済みで /login にアクセス → /tasks にリダイレクト
  * - セッションのCookieを自動更新する（期限切れ防止）
  */
 export async function proxy(request: NextRequest) {
@@ -52,10 +52,10 @@ export async function proxy(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  // ログイン済みで /login にアクセスした場合 → /todos にリダイレクト
+  // ログイン済みで /login にアクセスした場合 → /tasks にリダイレクト
   if (user && pathname === '/login') {
     const url = request.nextUrl.clone()
-    url.pathname = '/todos'
+    url.pathname = '/tasks'
     return NextResponse.redirect(url)
   }
 

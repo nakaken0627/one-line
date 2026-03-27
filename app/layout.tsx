@@ -6,14 +6,10 @@ export const metadata: Metadata = {
   description: 'メモ感覚で使えるタスク管理アプリ',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body className="bg-gray-50 min-h-screen">{children}</body>
     </html>
   )
 }
